@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'user_app/base.html' %}
+{% load static %}
+{% block body_block %}
+    <div class="jumbotron">
+        {% if registered %}
+            <h1>Thx for the registration, pidor</h1>
+        {% else %}
+            <h1>Hello to registration</h1>
+            <h3>Fill the bumagi:</h3>
+            <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ user_form.as_p}}
+                <p>---</p>
+        {{ profile_form.as_p}}
+                <input type="submit" name="" value="register">
+            </form>
+      {% endif %}
+
+    </div>
+    </div>
+{% endblock %}

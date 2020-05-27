@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends 'user_app/base.html' %}
+{% load static %}
+{% block body_block %}
+    <div class="jumbotron">
+        <h1>Logine? please!!!!suka</h1>
+            <form action="{% url 'my_app:user_login' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+                <labe for="username">Username:</labe>
+                <input type="text" name="username" id="username" placeholder="Enter username">
+                <labe for="password">Username:</labe>
+                <input type="password" name="password" id="password" placeholder="Enter password">
+                <input type="submit" name="submit" value="LOGIN">
+            </form>
+    </div>
+{% endblock %}
